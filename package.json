@@ -19,7 +19,7 @@
     "osws-native-styl": "0.0.*",
     "osws-selectors-styl": "0.0.*",
     "rupture": "0.6.*",
-    "socket.io": "^1.2.*",
+    "socket.io": "^2.4.*",
     "stylus": "0.49.*",
     "typescript": "1.3.*"
   }
