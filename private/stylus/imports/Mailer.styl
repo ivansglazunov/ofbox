@@ -1,0 +1,31 @@
+#Mailer
+	margin-bottom 20px
+
+.Mailer
+	overflow hidden
+	padding 10px
+
+	.disabled 
+		{selectors('input')}
+			background-color lighten(blue, 85%)
+		
+	{selectors('input')}
+		background white
+		padding 10px
+		margin 0px
+		margin-bottom 20px	
+		
+		+placeholder()
+			relative top 2px
+			color rgba(black,50%)
+			
+		&.error
+			box-shadow inset 0px 0px 0px 5px yellow
+
+	{selectors('buttons')}
+		width 100%
+		transition: all .25s
+		
+		&.done
+			background-color yellow
+			

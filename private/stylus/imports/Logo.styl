@@ -1,0 +1,144 @@
+LogoClose(size = 300px, border = 5px, shift = 15px)
+	relative()
+	
+	size(size, size)
+	
+	background-color desaturate(darken(yellow, 45%), 20%)
+	box-shadow(inset 0 0 0 (shift * 2) desaturate(darken(yellow, 35%), 20%))
+	
+	cursor pointer
+	
+	size-out = (size / 2) - border + (size / shift)
+	size-in = (size / 2) - border - (size / shift)
+	
+	div
+		transition: all .5s
+	
+	> div.Box
+		> div
+			background-color yellow
+			z-index 1
+			absolute()
+		
+		> div:nth-child(1) // ^
+			left 0px
+			top 0px
+			size(size-out, size-in)
+		
+		> div:nth-child(2) // >
+			top 0px
+			right 0px
+			size(size-in, size-out)
+		
+		> div:nth-child(3) // v
+			right 0px
+			bottom 0px
+			size(size-out, size-in)
+		
+		> div:nth-child(4) // <
+			bottom 0px
+			left 0px
+			size(size-in, size-out)
+	
+	> div.Content
+		absolute(top (size / 3))
+		z-index 0
+		font-size (size / 7)
+		text-align center
+		color rgba(black, 50%)
+		opacity(0)
+
+LogoPreClose(size = 300px, border = 5px, shift = 15px)
+	relative()
+	
+	size(size, size)
+	
+	background-color desaturate(darken(yellow, 35%), 20%)
+	box-shadow(inset 0 0 0 (shift * 2) desaturate(darken(yellow, 25%), 20%))
+	
+	transition: all .5s
+	
+	cursor pointer
+	
+	size-out = (size / 2) - border + (size / shift * 2)
+	size-in = (size / 2) - border - (size / shift * 2)
+	
+	div
+		transition all .5s
+	
+	> div.Box
+		> div
+			background-color lighten(yellow, 10%)
+			z-index 1
+		
+		> div:nth-child(1) // ^
+			absolute(left 0px top 0px)
+			size(size-out, size-in)
+		
+		> div:nth-child(2) // >
+			absolute(top 0px right 0px)
+			size(size-in, size-out)
+		
+		> div:nth-child(3) // v
+			absolute(right 0px bottom 0px)
+			size(size-out, size-in)
+		
+		> div:nth-child(4) // <
+			absolute(bottom 0px left 0px)
+			size(size-in, size-out)
+	
+	> div.Content
+		absolute(top (size / 3))
+		z-index 0
+		font-size (size / 7)
+		text-align center
+		color rgba(black, 50%)
+		opacity(.3)
+
+LogoOpen(size = 300px, border = 5px, shift = 15px)
+	relative()
+	
+	size(size, size)
+	
+	background-color desaturate(darken(yellow, 25%), 15%)
+	box-shadow(inset 0 0 0 (shift * 2) desaturate(darken(yellow, 15%), 10%))
+	
+	transition: all .5s
+	
+	cursor pointer
+	
+	size-out = size
+	size-in = (size / 3)
+	jump = -(size-in)
+	
+	div
+		transition all .7s
+	
+	> div.Box
+		> div
+			background-color desaturate(darken(yellow, 35%), 20%)
+			z-index 1
+		
+		> div:nth-child(1) // ^
+			absolute(left 0px top jump)
+			size(size-out, size-in)
+		
+		> div:nth-child(2) // >
+			absolute(top 0px right jump)
+			size(size-in, size-out)
+		
+		> div:nth-child(3) // v
+			absolute(right 0px bottom jump)
+			size(size-out, size-in)
+		
+		> div:nth-child(4) // <
+			absolute(bottom 0px left jump)
+			size(size-in, size-out)
+	
+	> div.Content
+		absolute(top (size / 3))
+		z-index 0
+		font-size (size / 7)
+		text-align center
+		color white
+		opacity(1)

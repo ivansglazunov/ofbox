@@ -1,0 +1,205 @@
+#Compare.Separator
+	overflow hidden
+	div.left, div.right
+		column(1/2)
+	div.left *
+		text-align right
+	div.right *
+		text-align left
+
+.Compare
+	overflow hidden
+	relative()
+	
+	+from-width(1000px)
+		font-size 1.1em
+	
+	h1, h2, h3, h4, h5, h6
+		padding 0 1em 15px 1em
+		color lighten(blue, 60%)
+	
+	button.price
+		cursor default
+	
+	> .line
+		absolute()
+		left 50%
+		top 0
+		height 100%
+		background-color darken(blue, 15%)
+		box-shadow(0 0 0 10px darken(blue, 15%))
+	
+	> .left, > .right
+			
+		.Icon
+			+between(scale[0], scale[2])
+				display none
+		
+		span(1/2)
+		margin 0px 0 30px 0
+		
+		> p
+			padding 0 30px 0 30px
+			font-size 0.9em
+			color rgba(white, 60%)
+		
+		> .group
+			> div > button.reason
+				relative top
+				padding 10px
+				cursor default
+				
+				+between(scale[0], scale[3])
+					width 100%
+				
+				&::after
+					content ""
+					absolute top 0
+			
+			> .content > div 
+				> button.reason
+					padding 7px 10px
+					+between(scale[0], scale[3])
+						width 100%
+				
+				> button.price
+					padding 7px 10px 0
+					float right
+					width 90px
+					
+					+between(scale[0], scale[3])
+						display none
+	
+	> .left
+		.Icon
+			float right
+		
+		> p
+			text-align right
+		
+		h1, h2, h3, h4, h5, h6
+			text-align right
+		
+		button
+			text-align right
+			cursor default
+		
+		i.glyphicon
+			margin-left 5px
+			relative top 3px
+		
+		> .group
+			margin-right 30px
+			margin-bottom 20px
+			
+			> div
+				text-align right
+				
+				> button.reason
+					margin-left auto
+					background-color #f0ad4e
+					color white
+					padding-left 10px
+					
+					// Эргономика отключена для ликвидации иллюзии возможности нажать на кнопки
+					// &:hover
+					// 	background-color darken(#f0ad4e, 20%)
+					// 	&::after
+					// 		border-triangle(">", 17px, darken(#f0ad4e, 20%))
+					
+					&::after
+						right -14px
+						border-triangle(">", 17px, #f0ad4e)
+					
+					+from-width(scale[3])
+						// Эргономика отключена для ликвидации иллюзии возможности нажать на кнопки
+						// &:hover
+						// 	background-color darken(#f0ad4e, 20%)
+						// 	&::after
+						// 		border-triangle(">", 18px, darken(#f0ad4e, 20%))
+						
+						&::after
+							right -14px
+							border-triangle(">", 18px, #f0ad4e)
+				
+			> .content
+				> div:nth-child(1) > button.reason
+					background-color darken(gray, 30%)
+				> div:nth-child(2) > button.reason
+					background-color darken(gray, 20%)
+				> div:nth-child(3) > button.reason
+					background-color darken(gray, 10%)
+				> div:nth-child(4) > button.reason
+					background-color darken(gray, 5%)
+				> div > button.reason
+					margin-left auto
+					background-color darken(gray, 0%)
+					
+					// Эргономика отключена для ликвидации иллюзии возможности нажать на кнопки
+					// &:hover
+					// 	background-color darken(gray, 40%)
+	
+	> .right
+		.Icon
+			float left
+		
+		> p
+			text-align left
+		
+		h1, h2, h3, h4, h5, h6
+			text-align left
+		
+		button
+			text-align left
+		
+		i.glyphicon
+			margin-right 5px
+			relative top 3px
+		
+		button.price
+			padding 7px 10px
+		
+		> .group
+			margin-top 10px
+			margin-left 30px
+			> div
+				> button.reason
+					margin-right auto
+					background-color white
+					color blue-dark
+					padding-right 10px
+					
+					&:hover
+						color darken(blue-dark, 10%)
+					
+					&::after
+						border-triangle("<", 17px, darken(#f0ad4e, 20%))
+					
+					&::after
+						left -14px
+						border-triangle("<", 17px, white)
+					
+					+from-width(scale[3])
+						&::after
+							left -14px
+							border-triangle("<", 19px, white)
+			
+			> .content
+				> div:nth-child(1) > button.reason
+					background-color lighten(blue, 20%)
+				> div:nth-child(2) > button.reason
+					background-color lighten(blue, 17%)
+				> div:nth-child(3) > button.reason
+					background-color lighten(blue, 12%)
+				> div:nth-child(4) > button.reason
+					background-color lighten(blue, 8%)
+				> div:nth-child(5) > button.reason
+					background-color lighten(blue, 4%)
+				> div:nth-child(6) > button.reason
+					background-color lighten(blue, 0%)
+				> div > button.reason
+					margin-right auto
+					background-color lighten(blue, 0%)
+					
+					&:hover
+						background-color lighten(blue, 30%)
